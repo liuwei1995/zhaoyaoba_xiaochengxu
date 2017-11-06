@@ -1,0 +1,23 @@
+<!--pages/health/health.wxml-->
+<view >
+<view class="view" >
+</view>
+  <view class='content' wx:for="{{array}}">
+  <block view class="view" wx:if="{{(item._type == 1)}}">
+    <image style="width: 100px; height: 100px; background-color: #eeeeee;"src="{{item.img}}">
+    </image>
+    <view style='flex:1'>
+       <!-- {{index}}:  -->
+        <view style='flex:1'> <!-- {{index}}:  -->{{item.title}}</view>
+        <view style='flex:1'> <!-- {{index}}:  -->{{item.message}}</view>
+    </view>
+  </block>
+  <block wx:else>
+  <view style='flex:1'>
+       <!-- {{index}}:  -->
+        <view style='flex:1'> <!-- {{index}}:  -->{{item.title}}</view>
+        <view style='flex:1'> <!-- {{index}}:  -->{{item.message}}</view>
+    </view>
+  </block>
+  </view>
+</view>

@@ -1,0 +1,43 @@
+{
+  "pages":[
+    "pages/health/health",
+    "pages/expert/expert",
+    "pages/find/find",
+    "pages/my/my"
+    ,
+    "pages/index/index"
+    ,"pages/logs/logs"
+    ,"pages/index/map/map"
+    ,"pages/index/searchMap/searchMap"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "找药吧",
+    "navigationBarTextStyle":"black"
+  }, "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/health/health",
+        "text": "健康"
+      },
+      {
+        "pagePath": "pages/expert/expert",
+        "text": "行业"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

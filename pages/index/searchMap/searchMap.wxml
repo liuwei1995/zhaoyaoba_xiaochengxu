@@ -1,0 +1,18 @@
+<!--pages/index/searchMap/searchMap.wxml-->
+<view>
+    <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" 
+         scale="{{scale}}"      
+         controls="{{controls}}" 
+          
+         markers="{{markers}}" 
+         circles="{{circles}}"
+          bindcallouttap="click"
+          polyline="{{polyline}}"            
+          bindregionchange="regionchange" 
+          show-location style="width: 100%; height: {{view.Height}}px;"
+          show-location="true"
+         >
+           <!-- bindtap="click({{markers}})" -->
+         <!-- show-location style="width: 100%; height: {{view.Height}}px;"  -->
+    </map>
+</view>
