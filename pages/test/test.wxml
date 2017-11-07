@@ -1,0 +1,3 @@
+<!--pages/test/test.wxml-->
+<text>{{title}}</text>
+<button open-type='navigate'>跳转</button>

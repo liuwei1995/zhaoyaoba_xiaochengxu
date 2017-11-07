@@ -4,8 +4,8 @@
     "pages/expert/expert",
     "pages/find/find",
     "pages/my/my"
-    ,
-    "pages/index/index"
+    ,"pages/test/test"
+    ,"pages/index/index"
     ,"pages/logs/logs"
     ,"pages/index/map/map"
     ,"pages/index/searchMap/searchMap"
@@ -33,6 +33,7 @@
         "pagePath": "pages/my/my",
         "text": "我的"
       }
+ 
     ]
   },
   "networkTimeout": {

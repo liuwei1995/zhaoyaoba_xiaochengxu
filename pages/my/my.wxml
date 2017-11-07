@@ -1,2 +1,29 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+
+<!-- <view class="btn-area">
+<button size='mini' open-type='contact'>跳转</button>
+  <navigator url="/pages/test/test" hover-class="navigator-hover" open-type='navigate'>跳转到新页面</navigator>
+
+  <navigator url="../../redirect/redirect/redirect?title=redirect" open-type="redirect" hover-class="other-navigator-hover">在当前页打开</navigator>
+  <navigator url="/page/index/index" open-type="switchTab" hover-class="other-navigator-hover">切换 Tab</navigator>
+</view> -->
+
+<scroll-view scroll-y style="width: {{scroll_view.width}}; height: {{scroll_view.Height}}px; " bindscrolltoupper="upper" bindscrolltolower="lower">
+
+  <view wx:for="{{array}}">
+    <view style="display: flex;flex-direction: row; height: 100px;" data-id='{{item.id}}' data-img="{{item.img}}" data-title="{{item.title}}" data-outline="{{item.outline}}" bindtap="click">
+      <image style='flex:1; height: 100px' src="{{item.img}}" mode='scaleToFill'>
+      </image>
+      <!-- <image style='flex:1; height: 100px' src='https://mp.weixin.qq.com/debug/wxadoc/dev/image/pic/scroll-view.png?t=2017112' mode='scaleToFill'>
+    </image> -->
+
+      <view style='display: flex; flex-direction: column; width: 65%;height:100px; padding-left: 10rpx; padding-top: 5rpx; '>
+        <text class='txt_title' style='flex:1; padding-right:5rpx; '>{{item.title}}</text>
+        <text class='txt_outline' style='flex:1; white-space: pre-wrap; padding-right:5rpx; '>{{item.outline}}</text>
+        <!-- <image style='flex:1;' src='http://7xloj2.com1.z0.glb.clouddn.com/1482733487700' mode='scaleToFill'>
+        </image> -->
+      </view>
+
+    </view>
+  </view>
+</scroll-view>
