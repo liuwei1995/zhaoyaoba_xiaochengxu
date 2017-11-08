@@ -1,41 +1,53 @@
 <!--pages/health/health.wxml-->
-<!-- <view >
-<view class="view" >
-</view>
-  <view class='content' wx:for="{{array}}">
-  <block view class="view" wx:if="{{(item._type == 1)}}">
-    <image style="width: 100px; height: 100px; background-color: #eeeeee;"src="{{item.img}}">
-    </image>
-    <view style='flex:1'>
-        <view style='flex:1'>{{item.title}}</view>
-        <view style='flex:1'>{{item.message}}</view>
-    </view>
-  </block>
-  <block wx:else>
-  <view style='flex:1'>
-        <view style='flex:1'>{{item.title}}</view>
-        <view style='flex:1'>{{item.message}}</view>
-    </view>
-  </block>
-  </view>
-</view> -->
 
-<scroll-view scroll-y style="width: {{scroll_view.width}}; height: {{scroll_view.Height}}px; " bindscrolltoupper="upper" bindscrolltolower="lower">
+<!-- <scroll-view scroll-y style="width: {{scroll_view.width}}; height: {{scroll_view.Height}}px; " bindscrolltoupper="upper" bindscrolltolower="lower">
 
   <view wx:for="{{array}}">
     <view style="display: flex;flex-direction: row; height: 100px;" data-id='{{item.id}}' data-img="{{item.img}}" data-title="{{item.title}}" data-outline="{{item.outline}}" bindtap="click">
       <image style='flex:1; height: 100px' src="{{item.img}}" mode='scaleToFill'>
       </image>
-      <!-- <image style='flex:1; height: 100px' src='https://mp.weixin.qq.com/debug/wxadoc/dev/image/pic/scroll-view.png?t=2017112' mode='scaleToFill'>
-    </image> -->
+
 
       <view style='display: flex; flex-direction: column; width: 65%;height:100px; padding-left: 10rpx; padding-top: 5rpx; '>
         <text class='txt_title' style='flex:1; padding-right:5rpx; '>{{item.title}}</text>
         <text class='txt_outline' style='flex:1; white-space: pre-wrap; padding-right:5rpx; '>{{item.outline}}</text>
-        <!-- <image style='flex:1;' src='http://7xloj2.com1.z0.glb.clouddn.com/1482733487700' mode='scaleToFill'>
-        </image> -->
+
       </view>
 
     </view>
   </view>
-</scroll-view>
+</scroll-view> -->
+<view>
+  <view class="swiper-tab" style="position:fixed; top:0; left: 0;width: 100%; height: 45px; background: #ffffff;">
+    <block wx:for="{{swiper_tab_list}}">
+      <view class="swiper-tab-list {{currentTab == index ? 'on' : ''}}" style='width: {{(100 / swiper_tab_list.length)}}%;' data-current="{{index}}" bindtap="swichNav">{{item.swiper_tab_title}}</view>
+    </block>
+  </view>
+
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px; margin-top:50px;" bindchange="bindChange">
+
+    <block wx:for="{{swiper_tab_list}}" style="display: block;">
+      <swiper-item>
+        <scroll-view scroll-y style="width: {{scroll_view.width}}; height: {{scroll_view.Height}}px; " bindscrolltoupper="upper" bindscrolltolower="lower">
+          <block wx:for="{{array}}" style="display: block;">
+
+            <view style="display: flex;flex-direction: row; height: 100px;" data-id='{{item.id}}' data-img="{{item.img}}" data-title="{{item.title}}" data-outline="{{item.outline}}" bindtap="click">
+              <image style='flex:1; height: 100px' src="{{item.img}}" mode='scaleToFill'>
+              </image>
+
+
+              <view style='display: flex; flex-direction: column; width: 65%;height:100px; padding-left: 10rpx; padding-top: 5rpx; '>
+                <text class='txt_title' style='flex:1; padding-right:5rpx; '>{{item.title}}</text>
+                <text class='txt_outline' style='flex:1; white-space: pre-wrap; padding-right:5rpx; '>{{item.outline}}</text>
+
+              </view>
+
+            </view>
+          </block>
+        </scroll-view>
+
+      </swiper-item>
+    </block>
+
+  </swiper>
+</view>

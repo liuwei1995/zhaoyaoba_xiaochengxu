@@ -1,0 +1,8 @@
+/* pages/health/health.wxss */
+.content{  
+  height: 100px;  
+  display: flex;  
+  flex-direction: row;/* 水平方向排列  不设置宽度，将flex设置为1 */
+  
+  /* flex-direction: column;  垂直方向排列  将flex设置为1*/
+}  

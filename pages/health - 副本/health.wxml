@@ -1,0 +1,41 @@
+<!--pages/health/health.wxml-->
+<!-- <view >
+<view class="view" >
+</view>
+  <view class='content' wx:for="{{array}}">
+  <block view class="view" wx:if="{{(item._type == 1)}}">
+    <image style="width: 100px; height: 100px; background-color: #eeeeee;"src="{{item.img}}">
+    </image>
+    <view style='flex:1'>
+        <view style='flex:1'>{{item.title}}</view>
+        <view style='flex:1'>{{item.message}}</view>
+    </view>
+  </block>
+  <block wx:else>
+  <view style='flex:1'>
+        <view style='flex:1'>{{item.title}}</view>
+        <view style='flex:1'>{{item.message}}</view>
+    </view>
+  </block>
+  </view>
+</view> -->
+
+<scroll-view scroll-y style="width: {{scroll_view.width}}; height: {{scroll_view.Height}}px; " bindscrolltoupper="upper" bindscrolltolower="lower">
+
+  <view wx:for="{{array}}">
+    <view style="display: flex;flex-direction: row; height: 100px;" data-id='{{item.id}}' data-img="{{item.img}}" data-title="{{item.title}}" data-outline="{{item.outline}}" bindtap="click">
+      <image style='flex:1; height: 100px' src="{{item.img}}" mode='scaleToFill'>
+      </image>
+      <!-- <image style='flex:1; height: 100px' src='https://mp.weixin.qq.com/debug/wxadoc/dev/image/pic/scroll-view.png?t=2017112' mode='scaleToFill'>
+    </image> -->
+
+      <view style='display: flex; flex-direction: column; width: 65%;height:100px; padding-left: 10rpx; padding-top: 5rpx; '>
+        <text class='txt_title' style='flex:1; padding-right:5rpx; '>{{item.title}}</text>
+        <text class='txt_outline' style='flex:1; white-space: pre-wrap; padding-right:5rpx; '>{{item.outline}}</text>
+        <!-- <image style='flex:1;' src='http://7xloj2.com1.z0.glb.clouddn.com/1482733487700' mode='scaleToFill'>
+        </image> -->
+      </view>
+
+    </view>
+  </view>
+</scroll-view>

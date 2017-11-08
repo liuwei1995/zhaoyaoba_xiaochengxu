@@ -21,7 +21,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": 0,
@@ -35,6 +35,12 @@
 					"name": "my",
 					"pathName": "pages/my/my",
 					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "health",
+					"pathName": "pages/health/health",
 					"scene": "1001"
 				}
 			]
